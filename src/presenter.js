@@ -11,5 +11,6 @@ form.addEventListener("submit", (event) => {
   const cantidad = cantidadItems_input.value;
   const precio = precioItems_input.value;
 
-  div.innerHTML = "<p>" + "Precio neto: " + calcularPrecioNeto(cantidad, precio) + "</p>";
+  div.innerHTML = "<p>" + "Precio neto: " +calcularPrecioNeto(cantidad, precio) + "</p>";
+  div.innerHTML = "<p>" + "Impuesto: "  + "</p>";
 });
