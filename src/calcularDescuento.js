@@ -20,5 +20,9 @@ function calcularDescuento(precioNeto)
     {
         return (precioNeto*10)/100;
     }
+    if(precioNeto>=15000)
+    {
+        return (precioNeto*15)/100;
+    }
 }
 export default calcularDescuento;

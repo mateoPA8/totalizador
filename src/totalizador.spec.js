@@ -36,5 +36,7 @@ describe("Totalizar", () => {
   it("deberia ser 10% el impuesto si el precio neto es mayor o igual que 10000 y menor que 15000", () => {
     expect(calcularDescuento(13000)).toEqual(1300);
   });
-  
+  it("deberia ser 15% el impuesto si el precio neto es mayor o igual que 15000", () => {
+    expect(calcularDescuento(18000)).toEqual(2700);
+  });
 });
