@@ -8,6 +8,10 @@ function calcularDescuento(precioNeto)
     {
         return (precioNeto*3)/100;
     }
+    if(precioNeto>=3000 && precioNeto<7000)
+    {
+        return (precioNeto*5)/100;
+    }
    
 }
 export default calcularDescuento;
