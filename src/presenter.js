@@ -1,6 +1,7 @@
 
 import calcularPrecioNeto from "./calcularPrecioNeto";
 import calcularImpuesto from "./calcularImpuesto";
+import calcularDescuento from "./calcularDescuento";
 const cantidadItems_input = document.querySelector("#cantidad-items");
 const precioItems_input= document.querySelector("#precio-items");
 const opcionesSelect = document.querySelector('#opciones');
@@ -14,9 +15,11 @@ form.addEventListener("submit", (event) => {
   const precio = precioItems_input.value;
   const estado = opcionesSelect.value;
   const precioNeto = calcularPrecioNeto(cantidad, precio);
-  console.log(estado);
+  const descuento=calcularDescuento(precioNeto);
   const impuesto = calcularImpuesto(precioNeto,estado);
   div.innerHTML = "<p>" + "Precio neto: " + precioNeto + "</p>";
+  div.innerHTML += "<p>" + "Descuento: "+ descuento +"$"+ "</p>";
   div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
+
   
 });

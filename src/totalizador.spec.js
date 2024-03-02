@@ -1,6 +1,7 @@
 
 import calcularPrecioNeto from "./calcularPrecioNeto";
 import calcularImpuesto from "./calcularImpuesto";
+import calcularDescuento from "./calcularDescuento";
 describe("Totalizar", () => {
   it("deberia calcular el precio neto multiplicando la cantidad de items por el precio ingresado", () => {
     expect(calcularPrecioNeto(2, 3)).toEqual(6);
@@ -19,5 +20,8 @@ describe("Totalizar", () => {
   });
   it("deberia calcular el impuesto para alabama segun el precio neto", () => {
     expect(calcularImpuesto(49, "AL")).toEqual(1.96);
+  });
+  it("deberia ser 0 el impuesto si el precio neto es menor que 1000", () => {
+    expect(calcularDescuento(49)).toEqual(0);
   });
 });
