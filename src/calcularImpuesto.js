@@ -1,6 +1,10 @@
-function calcularImpuesto(impuesto,precioNeto)
+
+function calcularImpuesto(precioNeto,estado)
 {
-   // return 0;
+   if(estado=="CA")
+   {
+      return (precioNeto*8.25)/100;
+   }
 }
 
 export default calcularImpuesto;
