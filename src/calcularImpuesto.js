@@ -13,6 +13,10 @@ function calcularImpuesto(precioNeto,estado)
    {
       return (precioNeto*6.65)/100;
    }
+   if(estado=="TX")
+   {
+      return (precioNeto*6.25)/100;
+   }
 
 }
 

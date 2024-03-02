@@ -14,4 +14,7 @@ describe("Totalizar", () => {
   it("deberia calcular el impuesto para Utah segun el precio neto", () => {
     expect(calcularImpuesto(49, "UT")).toEqual(3.2585);
   });
+  it("deberia calcular el impuesto para texas segun el precio neto", () => {
+    expect(calcularImpuesto(49, "TX")).toEqual(3.0625);
+  });
 });
