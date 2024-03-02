@@ -17,6 +17,6 @@ form.addEventListener("submit", (event) => {
   console.log(estado);
   const impuesto = calcularImpuesto(precioNeto,estado);
   div.innerHTML = "<p>" + "Precio neto: " + precioNeto + "</p>";
-  div.innerHTML += "<p>" + "Impuesto: " + impuesto + "</p>";
+  div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
   
 });
