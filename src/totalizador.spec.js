@@ -24,4 +24,8 @@ describe("Totalizar", () => {
   it("deberia ser 0 el impuesto si el precio neto es menor que 1000", () => {
     expect(calcularDescuento(49)).toEqual(0);
   });
+  it("deberia ser 3% el impuesto si el precio neto es mayor o igual que 1000 y menor que 1500", () => {
+    expect(calcularDescuento(1500)).toEqual(45);
+  });
+
 });
