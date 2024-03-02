@@ -17,6 +17,10 @@ function calcularImpuesto(precioNeto,estado)
    {
       return (precioNeto*6.25)/100;
    }
+   if(estado=="AL")
+   {
+      return (precioNeto*4.00)/100;
+   }
 
 }
 

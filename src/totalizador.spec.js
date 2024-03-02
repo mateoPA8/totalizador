@@ -17,4 +17,7 @@ describe("Totalizar", () => {
   it("deberia calcular el impuesto para texas segun el precio neto", () => {
     expect(calcularImpuesto(49, "TX")).toEqual(3.0625);
   });
+  it("deberia calcular el impuesto para alabama segun el precio neto", () => {
+    expect(calcularImpuesto(49, "AL")).toEqual(1.96);
+  });
 });
