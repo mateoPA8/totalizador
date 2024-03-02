@@ -9,6 +9,11 @@ function calcularImpuesto(precioNeto,estado)
    {
       return (precioNeto*8.00)/100;
    }
+   if(estado=="UT")
+   {
+      return (precioNeto*6.65)/100;
+   }
+
 }
 
 export default calcularImpuesto;
