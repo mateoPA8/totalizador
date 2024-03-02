@@ -1,27 +1,18 @@
 
 function calcularImpuesto(precioNeto,estado)
 {
-   if(estado=="CA")
-   {
-      return (precioNeto*8.25)/100;
+   let tasasImpuestos={
+      "CA":8.25,
+      "NV":8.00,
+      "UT":6.65,
+      "TX":6.25,
+      "AL":4.00
    }
-   if(estado=="NV")
+   if(estado in tasasImpuestos)
    {
-      return (precioNeto*8.00)/100;
+      return (precioNeto*tasasImpuestos[estado])/100;
    }
-   if(estado=="UT")
-   {
-      return (precioNeto*6.65)/100;
-   }
-   if(estado=="TX")
-   {
-      return (precioNeto*6.25)/100;
-   }
-   if(estado=="AL")
-   {
-      return (precioNeto*4.00)/100;
-   }
-
+      
 }
 
 export default calcularImpuesto;
