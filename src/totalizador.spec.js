@@ -39,4 +39,7 @@ describe("Totalizar", () => {
   it("deberia ser 15% el impuesto si el precio neto es mayor o igual que 15000", () => {
     expect(calcularDescuento(18000)).toEqual(2700);
   });
+  it("deberia ser 63.75% el precio total tomando en cuenta 20 productos valiendo 3 cada uno, impuesto para texas de 3.75 y 0 de descuento", () => {
+    expect((20*3+3.75-0)).toEqual(63.75);
+  });
 });
