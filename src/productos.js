@@ -1,4 +1,4 @@
-// Crear un diccionario de personas
+
 let categoriasProductos =
 {
     Escritorio: 

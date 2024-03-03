@@ -5,6 +5,12 @@ import calcularDescuento from "./calcularDescuento";
 import calcularCategorizacionProductos from "./calcularCategoriazcionProductos";
 import categoriasProductos from "./productos";
 let producto1=categoriasProductos.Bebidas;
+let producto2=categoriasProductos.Vestimenta;
+let producto3=categoriasProductos.Electronicos;
+let producto4=categoriasProductos.Alimentos;
+let producto5=categoriasProductos.Muebles;
+let producto6=categoriasProductos.Escritorio;
+let producto7=categoriasProductos.Varios;
 describe("Totalizar", () => {
   it("deberia calcular el precio neto multiplicando la cantidad de items por el precio ingresado", () => {
     expect(calcularPrecioNeto(2, 3)).toEqual(6);
@@ -47,5 +53,27 @@ describe("Totalizar", () => {
   });
   it("deberia ser 3.43 el impuesto por bebidas alcoholicas", () => {
     expect(calcularCategorizacionProductos(producto1,49)).toEqual(3.43);
+  });
+
+  //DIA 2
+  it("deberia calcular el impuesto por electronicos al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto3,49)).toEqual(1.96);
+  });
+  it("deberia calcular el impuesto por muebles al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto5,49)).toEqual(1.47);
+  });
+  it("deberia ser 0.98 el impuesto por vestimenta al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto2,49)).toEqual(0.98);
+  });
+  
+  it("deberia calcular el impuesto por alimentos al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto4,49)).toEqual(0);
+  });
+  
+  it("deberia calcular el impuesto por escritorios al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto6,49)).toEqual(0);
+  });
+  it("deberia calcular el impuesto por varios al tener un precio neto de 49", () => {
+    expect(calcularCategorizacionProductos(producto7,49)).toEqual(0);
   });
 });
