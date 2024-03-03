@@ -119,4 +119,7 @@ describe("Totalizar", () => {
   it("deberia calcular el descuento para clientes de tipo antiguo recurrente con un peso volumetrico mayores a 200", () => {
     expect(calcularDescuentosPorEnvio("antiguoRecurrente",">200",7)).toEqual(0.63);
   });
+  it("deberia calcular el descuento para clientes de tipo especial con un peso volumetrico entre 41-80", () => {
+    expect(calcularDescuentosPorEnvio("especial","41-80",7)).toEqual(0.63);
+  });
 });
