@@ -5,6 +5,7 @@ import calcularDescuento from "./calcularDescuento";
 import calcularImpuestosProductos from "./calcularImpuestosProductos";
 import categoriasProductos from "./productos";
 import calcularDescuentosProductos from "./calcularDescuentosProductos";
+import calcularPesoVolumetrico from "./calcularPesoVolumetrico";
 let producto1=categoriasProductos.Bebidas;
 let producto2=categoriasProductos.Vestimenta;
 let producto3=categoriasProductos.Electronicos;
@@ -86,5 +87,8 @@ describe("Totalizar", () => {
     expect(calcularDescuentosProductos(producto2,49)).toEqual(0);
     expect(calcularDescuentosProductos(producto1,49)).toEqual(0);
     expect(calcularDescuentosProductos(producto5,49)).toEqual(0);
+  });
+  it("deberia calcular el costo de envio para un peso volumetrico entre 0-10", () => {
+    expect(calcularPesoVolumetrico(7,"0-10")).toEqual(0);
   });
 });
