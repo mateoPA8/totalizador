@@ -12,6 +12,7 @@ const precioItems_input= document.querySelector("#precio-items");
 const opcionesSelect = document.querySelector('#opciones');
 const opcionesCategoria = document.querySelector('#categoria');
 const opcionesPeso=document.querySelector('#pesoVolumetrico');
+const opcionesCliente=document.querySelector("#tipoCliente");
 const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 
@@ -23,6 +24,7 @@ form.addEventListener("submit", (event) => {
   const estado = opcionesSelect.value;
   const categoria=opcionesCategoria.value;
   const peso=opcionesPeso.value;
+  const cliente=opcionesCliente.value;
   const precioNeto = calcularPrecioNeto(cantidad, precio);
   const descuento=calcularDescuento(precioNeto);
   const impuesto = calcularImpuesto(precioNeto,estado);
@@ -43,5 +45,7 @@ form.addEventListener("submit", (event) => {
     div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }
   const costoSegunPeso=calcularPesoVolumetrico(cantidad,peso);
+  console.log(cliente);
   div.innerHTML += "<p>" + "Costo de envio segun el peso: "+costoSegunPeso+"$"+"</p>";
+  div.innerHTML += "<p>" + "Descuento de envio segun el cliente: "+"</p>";
 });
