@@ -20,5 +20,9 @@ function calcularPesoVolumetrico(cantidad,peso)
     {
         return cantidad*6.5;
     }
+    if(peso=="101-200")
+    {
+        return cantidad*8;
+    }
 }
 export default calcularPesoVolumetrico;
