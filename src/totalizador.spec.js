@@ -2,7 +2,7 @@
 import calcularPrecioNeto from "./calcularPrecioNeto";
 import calcularImpuesto from "./calcularImpuesto";
 import calcularDescuento from "./calcularDescuento";
-import calcularCategorizacionProductos from "./calcularCategoriazcionProductos";
+import calcularImpuestosProductos from "./calcularImpuestosProductos";
 import categoriasProductos from "./productos";
 let producto1=categoriasProductos.Bebidas;
 let producto2=categoriasProductos.Vestimenta;
@@ -52,28 +52,28 @@ describe("Totalizar", () => {
     expect((20*3+3.75-0)).toEqual(63.75);
   });
   it("deberia ser 3.43 el impuesto por bebidas alcoholicas", () => {
-    expect(calcularCategorizacionProductos(producto1,49)).toEqual(3.43);
+    expect(calcularImpuestosProductos(producto1,49)).toEqual(3.43);
   });
 
   //DIA 2
   it("deberia calcular el impuesto por electronicos al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto3,49)).toEqual(1.96);
+    expect(calcularImpuestosProductos(producto3,49)).toEqual(1.96);
   });
   it("deberia calcular el impuesto por muebles al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto5,49)).toEqual(1.47);
+    expect(calcularImpuestosProductos(producto5,49)).toEqual(1.47);
   });
   it("deberia ser 0.98 el impuesto por vestimenta al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto2,49)).toEqual(0.98);
+    expect(calcularImpuestosProductos(producto2,49)).toEqual(0.98);
   });
   
   it("deberia calcular el impuesto por alimentos al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto4,49)).toEqual(0);
+    expect(calcularImpuestosProductos(producto4,49)).toEqual(0);
   });
   
   it("deberia calcular el impuesto por escritorios al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto6,49)).toEqual(0);
+    expect(calcularImpuestosProductos(producto6,49)).toEqual(0);
   });
   it("deberia calcular el impuesto por varios al tener un precio neto de 49", () => {
-    expect(calcularCategorizacionProductos(producto7,49)).toEqual(0);
+    expect(calcularImpuestosProductos(producto7,49)).toEqual(0);
   });
 });

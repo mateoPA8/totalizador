@@ -1,9 +1,11 @@
 
 import calcularPrecioNeto from "./calcularPrecioNeto";
 import calcularImpuesto from "./calcularImpuesto";
-import categoriasProductos from "./productos";
-import calcularCategorizacionProductos from "./calcularCategoriazcionProductos";
 import calcularDescuento from "./calcularDescuento";
+import categoriasProductos from "./productos";
+import calcularImpuestosProductos from "./calcularImpuestosProductos";
+
+
 const cantidadItems_input = document.querySelector("#cantidad-items");
 const precioItems_input= document.querySelector("#precio-items");
 const opcionesSelect = document.querySelector('#opciones');
@@ -32,9 +34,9 @@ form.addEventListener("submit", (event) => {
   {
     tipoProductoEscogido=categoriasProductos[categoria];
     console.log(tipoProductoEscogido);
-    const impuestoDescuentoSegunProducto=calcularCategorizacionProductos(tipoProductoEscogido,precioNeto);
-    div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoDescuentoSegunProducto+ "$"+"</p>";
-    div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +impuestoDescuentoSegunProducto+ "$"+"</p>";
+    const impuestoSegunProducto=calcularImpuestosProductos(tipoProductoEscogido,precioNeto);
+    div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoSegunProducto+ "$"+"</p>";
+    div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }
   
   
