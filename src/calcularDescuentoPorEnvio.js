@@ -9,5 +9,9 @@ function calcularDescuentosPorEnvio(cliente,peso,cantidad)
     {
         return (0.5*calcularPesoVolumetrico(cantidad,peso))/100;
     }
+    if(cliente=="antiguoRecurrente")
+    {
+        return (1*calcularPesoVolumetrico(cantidad,peso))/100;
+    }
 }
 export default calcularDescuentosPorEnvio;
