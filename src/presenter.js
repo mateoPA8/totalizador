@@ -21,6 +21,6 @@ form.addEventListener("submit", (event) => {
   div.innerHTML += "<p>" + "Descuento: "+ descuento +"$"+ "</p>";
   div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
   const precioTotal=precioNeto+impuesto-descuento;
-  div.innerHTML += "<p>" + "Precio total (incuesto, descuento): "+ precioTotal +"$"+ "</p>";
+  div.innerHTML += "<p>" + "Precio total (impuesto, descuento): "+ precioTotal +"$"+ "</p>";
   
 });
