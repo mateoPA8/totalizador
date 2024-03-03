@@ -4,7 +4,7 @@ import calcularImpuesto from "./calcularImpuesto";
 import calcularDescuento from "./calcularDescuento";
 import categoriasProductos from "./productos";
 import calcularImpuestosProductos from "./calcularImpuestosProductos";
-
+import calcularDescuentosProductos from "./calcularDescuentosProductos";
 
 const cantidadItems_input = document.querySelector("#cantidad-items");
 const precioItems_input= document.querySelector("#precio-items");
@@ -35,6 +35,7 @@ form.addEventListener("submit", (event) => {
     tipoProductoEscogido=categoriasProductos[categoria];
     console.log(tipoProductoEscogido);
     const impuestoSegunProducto=calcularImpuestosProductos(tipoProductoEscogido,precioNeto);
+    const descuentoSegunProducto=calcularDescuentosProductos(tipoProductoEscogido,precioNeto);
     div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoSegunProducto+ "$"+"</p>";
     div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }

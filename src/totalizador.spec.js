@@ -4,6 +4,7 @@ import calcularImpuesto from "./calcularImpuesto";
 import calcularDescuento from "./calcularDescuento";
 import calcularImpuestosProductos from "./calcularImpuestosProductos";
 import categoriasProductos from "./productos";
+import calcularDescuentosProductos from "./calcularDescuentosProductos";
 let producto1=categoriasProductos.Bebidas;
 let producto2=categoriasProductos.Vestimenta;
 let producto3=categoriasProductos.Electronicos;
@@ -75,5 +76,15 @@ describe("Totalizar", () => {
   });
   it("deberia calcular el impuesto por varios al tener un precio neto de 49", () => {
     expect(calcularImpuestosProductos(producto7,49)).toEqual(0);
+  });
+
+  it("deberia calcular el descuento de todas las categorias de prductos al tener un precio neto de 49", () => {
+    expect(calcularDescuentosProductos(producto4,49)).toEqual(0.98);
+    expect(calcularDescuentosProductos(producto6,49)).toEqual(0.735);
+    expect(calcularDescuentosProductos(producto3,49)).toEqual(0.49);
+    expect(calcularDescuentosProductos(producto7,49)).toEqual(0);
+    expect(calcularDescuentosProductos(producto2,49)).toEqual(0);
+    expect(calcularDescuentosProductos(producto1,49)).toEqual(0);
+    expect(calcularDescuentosProductos(producto5,49)).toEqual(0);
   });
 });
