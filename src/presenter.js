@@ -6,7 +6,7 @@ import categoriasProductos from "./productos";
 import calcularImpuestosProductos from "./calcularImpuestosProductos";
 import calcularDescuentosProductos from "./calcularDescuentosProductos";
 import calcularPesoVolumetrico from "./calcularPesoVolumetrico";
-
+import calcularDescuentosPorEnvio from "./calcularDescuentoPorEnvio";
 const cantidadItems_input = document.querySelector("#cantidad-items");
 const precioItems_input= document.querySelector("#precio-items");
 const opcionesSelect = document.querySelector('#opciones');
@@ -45,7 +45,7 @@ form.addEventListener("submit", (event) => {
     div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }
   const costoSegunPeso=calcularPesoVolumetrico(cantidad,peso);
-  console.log(cliente);
   div.innerHTML += "<p>" + "Costo de envio segun el peso: "+costoSegunPeso+"$"+"</p>";
-  div.innerHTML += "<p>" + "Descuento de envio segun el cliente: "+"</p>";
+  const descuentoSegunTipoCliente=calcularDescuentosPorEnvio(cliente,peso,cantidad);
+  div.innerHTML += "<p>" + "Descuento de envio segun el cliente: "+ descuentoSegunTipoCliente+"$"+"</p>";
 });
