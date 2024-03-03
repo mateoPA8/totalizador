@@ -2,6 +2,9 @@
 import calcularPrecioNeto from "./calcularPrecioNeto";
 import calcularImpuesto from "./calcularImpuesto";
 import calcularDescuento from "./calcularDescuento";
+import calcularCategorizacionProductos from "./calcularCategoriazcionProductos";
+import categoriasProductos from "./productos";
+let producto1=categoriasProductos.Bebidas;
 describe("Totalizar", () => {
   it("deberia calcular el precio neto multiplicando la cantidad de items por el precio ingresado", () => {
     expect(calcularPrecioNeto(2, 3)).toEqual(6);
@@ -41,5 +44,8 @@ describe("Totalizar", () => {
   });
   it("deberia ser 63.75% el precio total tomando en cuenta 20 productos valiendo 3 cada uno, impuesto para texas de 3.75 y 0 de descuento", () => {
     expect((20*3+3.75-0)).toEqual(63.75);
+  });
+  it("deberia ser 3.43 el impuesto por bebidas alcoholicas", () => {
+    expect(calcularCategorizacionProductos(producto1,49)).toEqual(3.43);
   });
 });
