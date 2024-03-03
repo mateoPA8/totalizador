@@ -33,7 +33,7 @@ form.addEventListener("submit", (event) => {
     tipoProductoEscogido=categoriasProductos[categoria];
     console.log(tipoProductoEscogido);
     const impuestoDescuentoSegunProducto=calcularCategorizacionProductos(tipoProductoEscogido,precioNeto);
-    div.innerHTML += "<p>" + "Impuesto y descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+"% "+" - "+tipoProductoEscogido.Descuento +" % "+ "): " +impuestoDescuentoSegunProducto+"</p>";
+    div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoDescuentoSegunProducto+ "$"+"</p>";
   }
   
   
