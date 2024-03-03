@@ -106,4 +106,7 @@ describe("Totalizar", () => {
   it("deberia calcular el costo de envio para un peso volumetrico entre 101-200", () => {
     expect(calcularPesoVolumetrico(7,"101-200")).toEqual(56);
   });
+  it("deberia calcular el costo de envio para un peso volumetrico igual o mayor a 200", () => {
+    expect(calcularPesoVolumetrico(7,">200")).toEqual(63);
+  });
 });

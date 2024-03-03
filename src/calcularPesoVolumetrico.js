@@ -24,5 +24,9 @@ function calcularPesoVolumetrico(cantidad,peso)
     {
         return cantidad*8;
     }
+    else
+    {
+        return cantidad*9;
+    }
 }
 export default calcularPesoVolumetrico;
