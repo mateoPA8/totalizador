@@ -1,21 +1,15 @@
 import calcularPesoVolumetrico from "./calcularPesoVolumetrico";
 function calcularDescuentosPorEnvio(cliente,peso,cantidad)
 {
-    if(cliente=="normal")
-    {
-        return 0*calcularPesoVolumetrico(cantidad,peso);
+    let clientesYdescuentos={
+        "normal":0,
+        "recurrente":0.5,
+        "antiguoRecurrente":1,
+        "especial":1.5
     }
-    if(cliente=="recurrente")
+    if(cliente in clientesYdescuentos)
     {
-        return (0.5*calcularPesoVolumetrico(cantidad,peso))/100;
-    }
-    if(cliente=="antiguoRecurrente")
-    {
-        return (1*calcularPesoVolumetrico(cantidad,peso))/100;
-    }
-    if(cliente=="especial")
-    {
-        return (1.5*calcularPesoVolumetrico(cantidad,peso))/100;
+        return (clientesYdescuentos[cliente]*calcularPesoVolumetrico(cantidad,peso))/100;
     }
 }
 export default calcularDescuentosPorEnvio;
