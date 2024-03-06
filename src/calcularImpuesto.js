@@ -1,5 +1,5 @@
 
-function calcularImpuesto(precioNeto,estado)
+function calcularImpuesto(precioConDescuento,estado)
 {
    let tasasImpuestos={
       "CA":8.25,
@@ -10,7 +10,7 @@ function calcularImpuesto(precioNeto,estado)
    }
    if(estado in tasasImpuestos)
    {
-      return (precioNeto*tasasImpuestos[estado])/100;
+      return (precioConDescuento*tasasImpuestos[estado])/100;
    }
       
 }

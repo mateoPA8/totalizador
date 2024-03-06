@@ -26,12 +26,17 @@ form.addEventListener("submit", (event) => {
   const peso=opcionesPeso.value;
   const cliente=opcionesCliente.value;
   const precioNeto = calcularPrecioNeto(cantidad, precio);
+
+
   const descuento=calcularDescuento(precioNeto);
-  const impuesto = calcularImpuesto(precioNeto,estado);
+  const precioConDescuento=precioNeto-descuento;
+  const impuesto = calcularImpuesto(precioConDescuento,estado);
   div.innerHTML = "<p>" + "Precio neto: " + precioNeto + "</p>";
   div.innerHTML += "<p>" + "Descuento: "+ descuento +"$"+ "</p>";
   div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
-  const precioTotal=precioNeto+impuesto-descuento;
+
+  
+  const precioTotal=precioConDescuento+impuesto;
   div.innerHTML += "<p>" + "Precio total (impuesto, descuento): "+ precioTotal +"$"+ "</p>";
   let tipoProductoEscogido;
   console.log(categoria);
