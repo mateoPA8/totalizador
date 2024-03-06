@@ -126,4 +126,7 @@ describe("Totalizar", () => {
   it("deberia calcular el descuento para clientes antiguos recurrentes, con precio neto de 5000 y categoria alimentos", () => {
     expect(calcularDescuentoFinal(5000,"antiguoRecurrente","Alimentos")).toEqual(4900);
   });
+  it("deberia calcular el descuento para clientes especiales, con precio neto de 8500 y categoria electronicos", () => {
+    expect(calcularDescuentoFinal(8500,"especial","Electronicos")).toEqual(8300);
+  });
 });

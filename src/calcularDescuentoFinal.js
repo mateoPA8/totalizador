@@ -4,5 +4,9 @@ function calcularDescuentoFinal(precioNeto,cliente,tipoProductoEscogido)
     {
         return precioNeto-100;
     }
+    if(precioNeto>7000 && cliente=="especial" && tipoProductoEscogido=="Electronicos")
+    {
+        return precioNeto-200;
+    }
 }
 export default calcularDescuentoFinal;
