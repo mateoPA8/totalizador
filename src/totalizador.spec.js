@@ -7,6 +7,7 @@ import categoriasProductos from "./productos";
 import calcularDescuentosProductos from "./calcularDescuentosProductos";
 import calcularPesoVolumetrico from "./calcularPesoVolumetrico";
 import calcularDescuentosPorEnvio from "./calcularDescuentoPorEnvio";
+import calcularDescuentoFinal from "./calcularDescuentoFinal";
 let producto1=categoriasProductos.Bebidas;
 let producto2=categoriasProductos.Vestimenta;
 let producto3=categoriasProductos.Electronicos;
@@ -121,5 +122,8 @@ describe("Totalizar", () => {
   });
   it("deberia calcular el descuento para clientes de tipo especial con un peso volumetrico entre 41-80", () => {
     expect(calcularDescuentosPorEnvio("especial","41-80",7)).toEqual(0.63);
+  });
+  it("deberia calcular el descuento para clientes antiguos recurrentes, con precio neto de 5000 y categoria alimentos", () => {
+    expect(calcularDescuentoFinal(5000,"antiguoRecurrente","Alimentos")).toEqual(4900);
   });
 });
