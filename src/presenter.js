@@ -25,18 +25,18 @@ form.addEventListener("submit", (event) => {
   const categoria=opcionesCategoria.value;
   const peso=opcionesPeso.value;
   const cliente=opcionesCliente.value;
-  const precioNeto = calcularPrecioNeto(cantidad, precio);
+  const precioNeto = calcularPrecioNeto(cantidad, precio);//60
 
 
-  const descuento=calcularDescuento(precioNeto);
-  const precioConDescuento=precioNeto-descuento;
-  const impuesto = calcularImpuesto(precioConDescuento,estado);
+  const descuento=calcularDescuento(precioNeto);//0
+  //const precioConDescuento=precioNeto-descuento;//60-0=60
+  const impuesto = calcularImpuesto(precioConDescuento,estado);//3.75
   div.innerHTML = "<p>" + "Precio neto: " + precioNeto + "</p>";
   div.innerHTML += "<p>" + "Descuento: "+ descuento +"$"+ "</p>";
   div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
+  //let precioTotal=precioConDescuento+impuesto;//60+3.75=63.75
 
   
-  const precioTotal=precioConDescuento+impuesto;
   div.innerHTML += "<p>" + "Precio total (impuesto, descuento): "+ precioTotal +"$"+ "</p>";
   let tipoProductoEscogido;
   console.log(categoria);
@@ -44,13 +44,16 @@ form.addEventListener("submit", (event) => {
   {
     tipoProductoEscogido=categoriasProductos[categoria];
     console.log(tipoProductoEscogido);
+    const descuentoSegunProducto=calcularDescuentosProductos(tipoProductoEscogido,precioNeto);//1.20
+    
     const impuestoSegunProducto=calcularImpuestosProductos(tipoProductoEscogido,precioNeto);
-    const descuentoSegunProducto=calcularDescuentosProductos(tipoProductoEscogido,precioNeto);
     div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoSegunProducto+ "$"+"</p>";
     div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }
   const costoSegunPeso=calcularPesoVolumetrico(cantidad,peso);
   div.innerHTML += "<p>" + "Costo de envio segun el peso: "+costoSegunPeso+"$"+"</p>";
   const descuentoSegunTipoCliente=calcularDescuentosPorEnvio(cliente,peso,cantidad);
+
+  
   div.innerHTML += "<p>" + "Descuento de envio segun el cliente: "+ descuentoSegunTipoCliente+"$"+"</p>";
 });
