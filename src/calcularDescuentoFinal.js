@@ -9,6 +9,6 @@ function calcularDescuentoFinal(precioNeto,cliente,categoria,precioConDescuentoE
     {
         return precioConDescuentoEimpuestos-200;
     }
-    return 0;
+    return precioConDescuentoEimpuestos;
 }
 export default calcularDescuentoFinal;
