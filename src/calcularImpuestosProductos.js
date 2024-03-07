@@ -1,5 +1,5 @@
-function calcularImpuestosProductos(tipoProductoEscogido,precioNeto)
+function calcularImpuestosProductos(tipoProductoEscogido,precioTotalConDescuento)
 {
-    return (precioNeto*tipoProductoEscogido.Impuesto)/100;
+    return (precioTotalConDescuento*tipoProductoEscogido.Impuesto)/100;
 }
 export default calcularImpuestosProductos;

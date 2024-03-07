@@ -1,12 +1,14 @@
-function calcularDescuentoFinal(precioNeto,cliente,tipoProductoEscogido)
+function calcularDescuentoFinal(precioNeto,cliente,categoria,precioConDescuentoEimpuestos)
 {
-    if(precioNeto>3000 && cliente=="antiguoRecurrente" && tipoProductoEscogido=="Alimentos")
+    
+    if(precioNeto>3000 && cliente=="recurrente" && categoria=="Alimentos")
     {
-        return precioNeto-100;
+        return precioConDescuentoEimpuestos-100;
     }
-    if(precioNeto>7000 && cliente=="especial" && tipoProductoEscogido=="Electronicos")
+    if(precioNeto>7000 && cliente=="especial" && categoria=="Electronicos")
     {
-        return precioNeto-200;
+        return precioConDescuentoEimpuestos-200;
     }
+    return 0;
 }
 export default calcularDescuentoFinal;

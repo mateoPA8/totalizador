@@ -123,10 +123,10 @@ describe("Totalizar", () => {
   it("deberia calcular el descuento para clientes de tipo especial con un peso volumetrico entre 41-80", () => {
     expect(calcularDescuentosPorEnvio("especial",24)).toEqual(0.36);
   });
-  it("deberia calcular el descuento para clientes antiguos recurrentes, con precio neto de 5000 y categoria alimentos", () => {
-    expect(calcularDescuentoFinal(5000,"antiguoRecurrente","Alimentos")).toEqual(4900);
+  it("deberia calcular el descuento para clientes  recurrentes, con precio neto de 5000 y categoria alimentos", () => {
+    expect(calcularDescuentoFinal(5000,"recurrente","Alimentos",4000)).toEqual(3900);
   });
   it("deberia calcular el descuento para clientes especiales, con precio neto de 8500 y categoria electronicos", () => {
-    expect(calcularDescuentoFinal(8500,"especial","Electronicos")).toEqual(8300);
+    expect(calcularDescuentoFinal(8500,"especial","Electronicos",10000)).toEqual(9800);
   });
 });
