@@ -25,9 +25,14 @@ form.addEventListener("submit", (event) => {
   const categoria=opcionesCategoria.value;
   const peso=opcionesPeso.value;
   const cliente=opcionesCliente.value;
-  const precioNeto = calcularPrecioNeto(cantidad, precio);//60
-
-
+  if(cantidad !== ""  && precio !== "" )
+  {
+    var precioNeto = calcularPrecioNeto(cantidad, precio);//60
+  }
+  else
+  {
+    alert("error");
+  }
   const descuento=calcularDescuento(precioNeto);//0
   //const precioConDescuento=precioNeto-descuento;//60-0=60
   const impuesto = calcularImpuesto(precioConDescuento,estado);//3.75
