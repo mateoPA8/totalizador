@@ -33,9 +33,9 @@ form.addEventListener("submit", (event) => {
   {
     alert("error");
   }
-  const descuento=calcularDescuento(precioNeto);//0
-  //const precioConDescuento=precioNeto-descuento;//60-0=60
-  const impuesto = calcularImpuesto(precioConDescuento,estado);//3.75
+  const descuento=calcularDescuento(precioNeto);
+  const precioConDescuento=precioNeto-descuento;
+  const impuesto = calcularImpuesto(precioConDescuento,estado);
   div.innerHTML = "<p>" + "Precio neto: " + precioNeto + "</p>";
   div.innerHTML += "<p>" + "Descuento: "+ descuento +"$"+ "</p>";
   div.innerHTML += "<p>" + "Impuesto para " + estado +":"+ impuesto +"$"+ "</p>";
@@ -49,16 +49,16 @@ form.addEventListener("submit", (event) => {
   {
     tipoProductoEscogido=categoriasProductos[categoria];
     console.log(tipoProductoEscogido);
-    const descuentoSegunProducto=calcularDescuentosProductos(tipoProductoEscogido,precioNeto);//1.20
-    
+    const descuentoSegunProducto=calcularDescuentosProductos(tipoProductoEscogido,precioConDescuento);//1.20
+    var nuevoDescuento=precioConDescuento-descuentoSegunProducto;
     const impuestoSegunProducto=calcularImpuestosProductos(tipoProductoEscogido,precioNeto);
     div.innerHTML += "<p>" + "Impuesto para la categoria "+ categoria + "(" + tipoProductoEscogido.Impuesto+ "%): " +impuestoSegunProducto+ "$"+"</p>";
     div.innerHTML += "<p>" + "Descuento para la categoria "+ categoria + "(" + tipoProductoEscogido.Descuento+ "%): " +descuentoSegunProducto+ "$"+"</p>";
   }
   const costoSegunPeso=calcularPesoVolumetrico(cantidad,peso);
   div.innerHTML += "<p>" + "Costo de envio segun el peso: "+costoSegunPeso+"$"+"</p>";
-  const descuentoSegunTipoCliente=calcularDescuentosPorEnvio(cliente,peso,cantidad);
-
-  
+  //const descuentoSegunTipoCliente=calcularDescuentosPorEnvio(cliente,peso,cantidad);
+  const descuentoSegunTipoCliente=calcularDescuentosPorEnvio(cliente,costoSegunPeso);
+  var nuevoDescuento2=nuevoDescuento-descuentoSegunTipoCliente;
   div.innerHTML += "<p>" + "Descuento de envio segun el cliente: "+ descuentoSegunTipoCliente+"$"+"</p>";
 });

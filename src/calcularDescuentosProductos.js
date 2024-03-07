@@ -1,5 +1,5 @@
-function calcularDescuentosProductos(tipoProductoEscogido,precioNeto)
+function calcularDescuentosProductos(tipoProductoEscogido,precioConDescuento)
 {
-   return (precioNeto*tipoProductoEscogido.Descuento)/100;
+   return (precioConDescuento*tipoProductoEscogido.Descuento)/100;
 }
 export default calcularDescuentosProductos;

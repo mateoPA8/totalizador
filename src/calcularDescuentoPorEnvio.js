@@ -1,5 +1,5 @@
 import calcularPesoVolumetrico from "./calcularPesoVolumetrico";
-function calcularDescuentosPorEnvio(cliente,peso,cantidad)
+function calcularDescuentosPorEnvio(cliente,costoSegunPeso)
 {
     let clientesYdescuentos={
         "normal":0,
@@ -9,7 +9,7 @@ function calcularDescuentosPorEnvio(cliente,peso,cantidad)
     }
     if(cliente in clientesYdescuentos)
     {
-        return (clientesYdescuentos[cliente]*calcularPesoVolumetrico(cantidad,peso))/100;
+        return (clientesYdescuentos[cliente]*costoSegunPeso)/100;
     }
 }
 export default calcularDescuentosPorEnvio;
